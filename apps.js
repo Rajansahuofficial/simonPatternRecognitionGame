@@ -14,9 +14,19 @@ const WIN_LEVEL = 10;
 
 let h2 = document.querySelector("h2");
 
+
 document.addEventListener("keypress", function () {
     if (started == false) {
         console.log("game is started");
+        started = true;
+        levelUp();
+    }
+});
+
+
+document.addEventListener("dblclick", function () {
+    if (started == false) {
+        console.log("game is started (mobile double tap)");
         started = true;
         levelUp();
     }
@@ -78,7 +88,7 @@ function checkAns(idx) {
             if (level >= WIN_LEVEL) {
 
                 winSound.play();
-                h2.innerHTML = ` You Win! You completed Level ${level}! <br> Press Any Key to Play Again`;
+                h2.innerHTML = `🎉 You Win! You completed Level ${level}! <br> Press Any Key or Double Tap to Play Again`;
                 reset();
             } else {
                 setTimeout(levelUp, 1000);
@@ -88,7 +98,7 @@ function checkAns(idx) {
 
         wrongSound.play();
 
-        h2.innerHTML = `Game Over! Your score was <b>${level}</b> <br> Press Any Key to Restart`;
+        h2.innerHTML = `Game Over! Your score was <b>${level}</b> <br> Press Any Key or Double Tap to Restart`;
         document.querySelector("body").style.backgroundColor = "red";
 
         setTimeout(function () {

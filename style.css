@@ -1,46 +1,124 @@
-body
-{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+    min-height: 100vh;
 }
 
-.btn
-{
-    height: 200 px;
-    width: 200px;
-    border-radius: 20%;
-    border: 10px solid black;
-    margin: 3rem;
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-.btn-container 
-{
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.line-one,
+.line-two {
     display: flex;
     justify-content: center;
-
+    gap: 1rem;
 }
 
-.yellow 
-{
-    background-color: yellow;
-}
-.red
-{
-    background-color: red;
+.btn {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    border: 5px solid #222;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.1s;
 }
 
-.purple
-{
-    background-color: purple;
+.btn:active {
+    transform: scale(0.95);
 }
-.green
-{
-    background-color: green;
+
+.yellow {
+    background-color: #f1c40f;
 }
-.flash
-{
+
+.red {
+    background-color: #e74c3c;
+}
+
+.purple {
+    background-color: #9b59b6;
+}
+
+.green {
+    background-color: #2ecc71;
+}
+
+.flash {
     background-color: white;
 }
-.userflash
-{
-    background-color: green;
+
+.userFlash {
+    background-color: #95e4ab;
+}
+
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 120px;
+        height: 120px;
+        border-width: 4px;
+        border-radius: 12px;
+        font-size: 1.2rem;
+    }
+
+    .line-one,
+    .line-two {
+        gap: 0.6rem;
+    }
+
+    .btn-container {
+        gap: 0.6rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .btn {
+        width: 200px;
+        height: 200px;
+        border-width: 6px;
+        font-size: 2rem;
+    }
+
+    .line-one,
+    .line-two {
+        gap: 1.5rem;
+    }
 }
